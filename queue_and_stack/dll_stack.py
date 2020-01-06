@@ -19,11 +19,13 @@ class Stack:
         self.storage.add_to_head(value)
 
     def pop(self):
-        if self.size >= 0:
-            return None
-        if self.size < 0:
+        if self.size <= 0: # if the size is less than or equal to 0
+            return None # return 
+        if self.size > 0: 
             self.size = self.size - 1
-            return self.storage.remove_from_tail()
+            return self.storage.remove_from_head()
+        else:
+            return None
 
     def len(self):
         return self.size
