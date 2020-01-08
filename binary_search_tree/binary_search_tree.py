@@ -25,8 +25,12 @@ class BinarySearchTree:
         if value < self.value:
             if not self.left:
                 self.left = BinarySearchTree(value)
+                # if something is on the left
+                # (which there is because it starts as 'None')
+                # it'll return and go through again
             else:
                 self.left.insert(value)
+                # if there isn't anything, it'll update that value
         if value >= self.value:
             if not self.right:
                 self.right = BinarySearchTree(value)
