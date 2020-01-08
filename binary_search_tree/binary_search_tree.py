@@ -40,7 +40,7 @@ class BinarySearchTree:
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
-
+        pass
 
     # Return the maximum value found in the tree
     def get_max(self):
@@ -48,7 +48,15 @@ class BinarySearchTree:
         # so we really only need to go right
         # continue to go through until we find a dead end/node with nothing on the right to it
         # the node with the dead end is the highest value
-        
+        if self.right:
+            # if there is something on the right
+            return self.right.get_max()
+            # return that max value on the right
+        if not self.right:
+            return self.value
+            # return the value of the node
+            # because that's gotta be the largest then
+
 
     # Call the function `cb` on the value of each node
     # You may use a recursive or iterative approach
