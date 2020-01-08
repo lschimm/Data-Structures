@@ -7,6 +7,7 @@ from doubly_linked_list import DoublyLinkedList
 #   _____
 #  ________
 # it brings/PUSHES items up and items come/POP off  the top
+# add to the tail, remove from the head
 
 class Stack:
     def __init__(self):
