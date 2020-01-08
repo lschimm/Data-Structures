@@ -30,7 +30,7 @@ class BinarySearchTree:
                 # it'll return and go through again
                 # if there isn't anything, it'll insert it there
             if not self.left:
-                self.left = BinarySearchTree(value)
+                self.left = BinarySearchTree(value) 
         if value >= self.value:
             if not self.right:
                 self.right = BinarySearchTree(value)
