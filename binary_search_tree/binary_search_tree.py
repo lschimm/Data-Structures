@@ -23,14 +23,14 @@ class BinarySearchTree:
         # if the value of the node  >= self.value (root node)
         # go right
         if value < self.value:
-            if not self.left:
-                self.left = BinarySearchTree(value)
-                # if something is on the left
+            if self.left:
+                self.left.insert(value)
+                 # if something is on the left
                 # (which there is because it starts as 'None')
                 # it'll return and go through again
-            else:
-                self.left.insert(value)
-                # if there isn't anything, it'll update that value
+                # if there isn't anything, it'll insert it there
+            if not self.left:
+                self.left = BinarySearchTree(value)
         if value >= self.value:
             if not self.right:
                 self.right = BinarySearchTree(value)
@@ -51,7 +51,7 @@ class BinarySearchTree:
         if self.right:
             # if there is something on the right
             return self.right.get_max()
-            # return that max value on the right
+            # calls upon the function
         if not self.right:
             return self.value
             # return the value of the node
